@@ -118,14 +118,14 @@ const Calculator = () => {
   };
 
   const calculatorBtns = (
-    <div>
+    <div className="h-2/3">
       {rows.map((btns, rowIndex) => (
-        <div key={rowIndex} className="h-20 w-full">
+        <div key={rowIndex} className="h-[21%] w-full flex justify-evenly">
           {btns.map((btn, i) => (
             <button
               key={i}
                
-              className={`h-3/4 w-16 mx-1 my-1 drop-shadow-gray-800 shadow-md rounded-3xl ${getButtonClass(
+              className={`h-[70%] w-1/5 mx-1 my-1 drop-shadow-gray-800 shadow-md rounded-3xl ${getButtonClass(
                 btn
               )}`}
               onClick={() => {
@@ -141,18 +141,18 @@ const Calculator = () => {
   );
 
   return (
-    <div className="calculator-box flex justify-center items-center h-screen bg-black">
-      <div className="calculator-grid h-fit w-fit shadow-md shadow-stone-400 border-4 border-white bg-white drop-shadow-white- rounded-3xl overflow-hidden">
-        <div className="flex  h-36 w-72 flex-col justify-end">
+    <div className="calculator-box flex justify-center h-screen bg-black text-3xl">
+      <div className="calculator-grid h-full w-fit shadow-md shadow-stone-400  border-white bg-white drop-shadow-white- rounded-3xl overflow-hidden px-2">
+        <div className="flex  h-[30%] w-[93vw] md:w-[75vw] lg:w-[35vw] xl:w-[25vw] 2xl:w-[22vw] flex-col justify-end">
           <input
             type="text"
-            className="inp text-right rounded-t-2xl text-gray-700 bg-amber-200 mt-2.5 mx-3 h-14 px-2"
+            className="inp text-right rounded-t-2xl text-gray-700 bg-amber-200 mt-2.5 mx-3 h-36 px-2"
             value={expression}
             readOnly
           />
           <input
             type="text"
-            className="inp text-right rounded-b-2xl text-black bg-amber-200 mb-2.5 mx-3 h-14 px-2 focus:outline-none"
+            className="inp text-right rounded-b-2xl text-black bg-amber-200 mb-2.5 mx-3 h-2/5 px-5 focus:outline-none"
             value={displayValue}
            onKeyDown={pressedBtn}
             ref={refbtn}
@@ -160,7 +160,8 @@ const Calculator = () => {
           />
         </div>
 
-        <div>{calculatorBtns}</div>
+        {/* <div className="px-3 h-2/3"></div> */}
+        {calculatorBtns}
       </div>
     </div>
   );
